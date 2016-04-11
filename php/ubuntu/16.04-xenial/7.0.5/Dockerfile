@@ -21,10 +21,10 @@ RUN apt-get install -y --no-install-recommends \
     libjpeg62 \
     libfreetype6-dev \
     libmysqlclient-dev \
-    libgmp-dev \
     libpspell-dev \
     libicu-dev \
     librecode-dev \
+    libgmp-dev \
     curl \
     make \
     autoconf \
@@ -36,14 +36,29 @@ RUN cd /opt && curl -SL "https://php.net/get/php-$PHP_VERSION.tar.gz/from/this/m
 	&& mkdir -p /opt/php-src \
 	&& tar -xof php.tar.xz -C /opt/php-src --strip-components=1
 
+RUN ln -s /usr/include/x86_64-linux-gnu/gmp.h /usr/include/gmp.h
+
 RUN cd /opt/php-src \
     && ./buildconf --force \
     && ./configure --quiet \
         --disable-cgi \
+        --enable-exif \
+        --enable-intl \
+        --with-gd \
+        --with-gmp \
         --with-curl \
+        --with-mcrypt \
+        --with-zlib \
+        --enable-calendar \
+        --enable-soap \
+        --enable-pcntl \
+        --enable-sysvmsg \
+        --enable-sysvsem \
+        --enable-sysvshm \
+        --enable-intl \
+        --enable-mbstring \
         --prefix=/opt/php7 \
     && make -j"$(nproc)" --quiet \
     && make install
 
 ENTRYPOINT ["/bin/bash"]
-
