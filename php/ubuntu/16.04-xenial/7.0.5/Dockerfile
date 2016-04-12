@@ -12,6 +12,7 @@ RUN apt-get install -y --no-install-recommends \
     bison \
     ca-certificates \
     git \
+    libpq-dev \
     libssl-dev \
     libxml2-dev \
     libcurl4-openssl-dev \
@@ -42,6 +43,7 @@ RUN cd /opt/php-src \
     && ./buildconf --force \
     && ./configure --quiet \
         --disable-cgi \
+        --with-pdo-pgsql \
         --enable-exif \
         --enable-intl \
         --with-gd \
