@@ -12,6 +12,8 @@ RUN apt-get install -y --no-install-recommends \
     bison \
     ca-certificates \
     git \
+    libssl-dev \
+    libcurl4-openssl-dev \
     libpq-dev \
     libssl-dev \
     libxml2-dev \
@@ -30,6 +32,7 @@ RUN apt-get install -y --no-install-recommends \
     make \
     autoconf \
     build-essential \
+    pkg-config \
     g++ \
     libc6-dev
 
@@ -46,6 +49,12 @@ RUN cd /opt/php-src \
         --with-pdo-pgsql \
         --enable-exif \
         --enable-intl \
+        --without-pear \
+        --enable-filter \
+        --with-openssl \
+        --with-curl \
+        --enable-hash \
+        --with-mhash=/usr \
         --with-gd \
         --with-gmp \
         --with-curl \
