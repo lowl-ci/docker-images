@@ -72,4 +72,6 @@ RUN cd /opt/php-src \
     && make -j"$(nproc)" --quiet \
     && make install
 
+RUN ln -s /opt/php7/bin/php /usr/local/bin/php
+
 ENTRYPOINT ["/bin/bash"]
