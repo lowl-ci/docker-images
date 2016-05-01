@@ -68,10 +68,8 @@ RUN cd /opt/php-src \
         --enable-sysvshm \
         --enable-intl \
         --enable-mbstring \
-        --prefix=/opt/php7 \
+        --prefix=/usr/local \
     && make -j"$(nproc)" --quiet \
     && make install
-    
-RUN ln -s /opt/php7/bin/php /usr/local/bin/php
 
 ENTRYPOINT ["/bin/bash"]
