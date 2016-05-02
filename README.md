@@ -22,6 +22,13 @@ Docker Images for LowL.CI
 |                            |          | 7.0.1          |
 |                            |          | 7.0.0          |
 
+### Node.js
+
+| OS                         | Language | Version        |
+|----------------------------|----------|----------------|
+| Ubuntu 16.04 Xenial Xerus  | Node     | 6.0.0 (latest) |
+|                            |          | 0.11.16        |
+
 # LICENSE
 
 MIT
