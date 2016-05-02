@@ -72,4 +72,4 @@ RUN cd /opt/php-src \
     && make -j"$(nproc)" --quiet \
     && make install
 
-ENTRYPOINT ["/bin/bash"]
+CMD ["/bin/bash"]
