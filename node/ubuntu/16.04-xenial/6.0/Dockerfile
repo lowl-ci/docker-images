@@ -5,3 +5,6 @@ MAINTAINER Patsura Dmitry <talk@dmtry.me>
 ENV NODE_VERSION 6.0
 
 RUN /bin/bash -l -c "nvm install $NODE_VERSION && nvm use $NODE_VERSION && rm -rf $HOME/.nvm/bin && ln -s \$NVM_BIN $HOME/.nvm/bin"
+
+RUN apt-get clean
+RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*

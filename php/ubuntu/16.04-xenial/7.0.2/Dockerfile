@@ -72,4 +72,7 @@ RUN cd /opt/php-src \
     && make -j"$(nproc)" --quiet \
     && make install
 
+RUN apt-get clean
+RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
 CMD ["/bin/bash"]

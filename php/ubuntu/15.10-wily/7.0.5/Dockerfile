@@ -47,4 +47,7 @@ RUN cd /opt/php-src \
 
 RUN ln -s /opt/php7/bin/php /usr/local/bin/php
 
+RUN apt-get clean
+RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
 ENTRYPOINT ["/bin/bash"]
