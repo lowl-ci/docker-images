@@ -15,7 +15,7 @@ RUN apt-get install -y --no-install-recommends \
     libssl-dev \
     libcurl4-openssl-dev \
     libpq-dev \
-    libssl-dev i\
+    libssl-dev \
     libxml2-dev \
     libcurl4-openssl-dev \
     libmcrypt-dev \
