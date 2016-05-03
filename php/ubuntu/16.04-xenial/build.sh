@@ -5,6 +5,8 @@ docker push lowlci/php-ubuntu-1604:latest
 docker build -t lowlci/php-ubuntu-1604:7.0.6 - < Dockerfile
 docker push lowlci/php-ubuntu-1604:7.0.6
 
+cd ..
+
 # 7.0.5
 cd 7.0.5
 docker build -t lowlci/php-ubuntu-1604:7.0.5 - < Dockerfile
