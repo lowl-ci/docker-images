@@ -14,6 +14,7 @@ RUN cd /opt/php-src \
     && ./buildconf --force \
     && ./configure --quiet \
         --disable-cgi \
+        --with-pdo-mysql \
         --with-pdo-pgsql \
         --enable-exif \
         --enable-intl \
