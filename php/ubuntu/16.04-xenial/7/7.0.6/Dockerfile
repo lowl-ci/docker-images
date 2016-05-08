@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM lowlci/php-ubuntu-1604-base
 
 MAINTAINER Patsura Dmitry <talk@dmtry.me>
 
