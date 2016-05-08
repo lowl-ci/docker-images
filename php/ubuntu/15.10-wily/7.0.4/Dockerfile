@@ -74,6 +74,6 @@ RUN cd /opt/php-src \
     && make install
 
 RUN apt-get clean
-RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN rm -rf /var/lib/apt/lists/* /opt/php-src /tmp/* /var/tmp/*
 
 CMD ["/bin/bash"]
