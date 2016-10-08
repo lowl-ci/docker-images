@@ -32,4 +32,5 @@ RUN apt-get install -y --no-install-recommends \
     build-essential \
     pkg-config \
     g++ \
-    libc6-dev
+    libc6-dev \
+    unzip
