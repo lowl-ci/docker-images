@@ -2,10 +2,9 @@ FROM ubuntu:16.04
 
 MAINTAINER Patsura Dmitry <talk@dmtry.me>
 
-RUN apt-get update
-RUN apt-get -y upgrade
-
-RUN apt-get install -y --no-install-recommends \
+RUN apt-get update \
+  && apt-get -y upgrade \
+  && apt-get install -y --no-install-recommends \
     re2c \
     bison \
     ca-certificates \
@@ -33,4 +32,6 @@ RUN apt-get install -y --no-install-recommends \
     pkg-config \
     g++ \
     libc6-dev \
-    unzip
+    unzip \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
