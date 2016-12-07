@@ -39,6 +39,6 @@ RUN cd /opt && curl -SL "https://php.net/get/php-$PHP_VERSION.tar.gz/from/this/m
   && make -j"$(nproc)" --quiet \
   && make install \
 	&& apt-get clean \
-	&& rm -rf /var/lib/apt/lists/* /opt/php-src /tmp/* /var/tmp/*
+	&& rm -rf /var/lib/apt/lists/* /opt/php.tar.xz /opt/php-src /tmp/* /var/tmp/*
 
 CMD ["/bin/bash"]
