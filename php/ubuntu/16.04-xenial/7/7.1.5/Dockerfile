@@ -2,7 +2,7 @@ FROM lowlci/php-ubuntu-1604-base
 
 MAINTAINER Patsura Dmitry <talk@dmtry.me>
 
-ENV PHP_VERSION 7.0.1
+ENV PHP_VERSION 7.1.5
 
 RUN cd /opt && curl -SL "https://php.net/get/php-$PHP_VERSION.tar.gz/from/this/mirror" -o php.tar.xz \
 	&& mkdir -p /opt/php-src \
@@ -36,8 +36,8 @@ RUN cd /opt && curl -SL "https://php.net/get/php-$PHP_VERSION.tar.gz/from/this/m
     --enable-intl \
     --enable-mbstring \
     --prefix=/usr/local \
-	&& make -j"$(nproc)" --quiet \
-	&& make install \
+  && make -j"$(nproc)" --quiet \
+  && make install \
 	&& apt-get clean \
 	&& rm -rf /var/lib/apt/lists/* /opt/php.tar.xz /opt/php-src /tmp/* /var/tmp/*
 
